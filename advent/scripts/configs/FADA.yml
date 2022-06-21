@@ -1,0 +1,28 @@
+SOURCE: GTA
+TARGET: Cityscapes
+EXP_NAME: FADA_baseline
+NUM_WORKERS: 6
+ANTI_CL: False
+TRAIN:
+  DA_METHOD: FADA
+  MODEL: DeepLabv2
+  RESTORE_FROM: ./../../experiments/snapshots/Source_longer/model_1.pth
+  MULTI_LEVEL: True
+  LAMBDA_ADV_MAIN: 0.001
+  LAMBDA_ADV_AUX: 0.0002
+  INIT_ITER: 0
+  SAVE_PRED_EVERY: 2000
+  CLASSES_INCLUDE: 19
+  WEIGHTS: False
+  PREV_STOP: 0
+  EARLY_STOP: 40000
+  MAX_ITERS: 62500
+  BATCH_SIZE_SOURCE: 2
+  BATCH_SIZE_TARGET: 2
+TEST:
+  MODE: best 
+  SNAPSHOT_STEP: 2000
+  SNAPSHOT_MAXITER: 40000
+  FLIP: True
+  RESTORE_FROM: 
+    - /mnt/rhome/rac/ADVENT/experiments/snapshots/FADA_aux/model_44000.pth # ./../../experiments/snapshots/FADA_aux/model_30000.pth  

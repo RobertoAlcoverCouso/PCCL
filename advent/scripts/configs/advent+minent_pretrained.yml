@@ -1,0 +1,31 @@
+SOURCE: GTA
+TARGET: Cityscapes
+EXP_NAME: GTA2Cityscapes_AdvEnt_MinEnt
+NUM_WORKERS: 4
+TEST:
+  MODE: single
+  MODEL:
+    - DeepLabv2
+    - DeepLabv2
+    - DeepLabv2
+    - DeepLabv2
+    - DeepLabv2
+  MULTI_LEVEL:
+    - True
+    - True
+    - True
+    - True
+    - True
+  RESTORE_FROM:
+    - ./../pretrained_models/Best_ADVENT.pth
+    - ./../pretrained_models/Best_MINENT.pth
+    - ./../pretrained_models/Best_IW_MAXSQUARE.pth
+    - ./../pretrained_models/Best_Adapt_Segnet.pth
+    - ./../pretrained_models/Best_FADA_aux.pth
+  MODEL_WEIGHT:
+    - 0.2
+    - 0.2
+    - 0.2
+    - 0.2
+    - 0.2
+  FLIP: True

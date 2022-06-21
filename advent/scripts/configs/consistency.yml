@@ -1,0 +1,15 @@
+SOURCE: GTA
+TARGET: Cityscapes
+EXP_NAME: Consistency_CL
+NUM_WORKERS: 4
+ANTI_CL: False
+TRAIN:
+  DA_METHOD: pretext_const
+  MODEL: DeepLabv2
+  RESTORE_FROM: ./../../experiments/snapshots/Curriculum_include_every_epoch/model_450000.pth
+  MULTI_LEVEL: True
+  LAMBDA_ADV_MAIN: 0.001
+  LAMBDA_ADV_AUX: 0.0002
+  WEIGHTS: True
+TEST:
+  MODE: best

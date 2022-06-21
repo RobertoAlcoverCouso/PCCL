@@ -1,0 +1,24 @@
+SOURCE: GTA
+TARGET: Cityscapes
+EXP_NAME: Predefined_1_view
+NUM_WORKERS: 4
+ANTI_CL: False
+TRAIN:
+  DA_METHOD: CL
+  MODEL: DeepLabv2
+  RESTORE_FROM: ./../pretrained_models/DeepLab_resnet_pretrained_imagenet.pth
+  MULTI_LEVEL: True
+  EARLY_STOP: 20000
+  MAX_ITERS: 40000
+  CLASSES_INCLUDE: 3
+  WEIGHTS: False
+  INIT_ITER: 0
+  PREV_STOP: 0
+  ORDER: Pre_defined
+  PACING: 1view
+  LEARNING_RATE: 0.0005
+  BATCH_SIZE_SOURCE: 2
+TEST:
+  MODE: best
+  SNAPSHOT_STEP: 17
+  SNAPSHOT_MAXITER: 17

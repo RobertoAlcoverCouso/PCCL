@@ -1,0 +1,27 @@
+SOURCE: GTA
+TARGET: Cityscapes
+EXP_NAME: minMMD
+NUM_WORKERS: 6
+ANTI_CL: False
+TRAIN:
+  DA_METHOD: minmmd
+  MODEL: DeepLabv2
+  RESTORE_FROM: /mnt/rhome/rac/ADVENT/experiments/snapshots/minMMD/model_iter3_55mIoU.pth
+  MULTI_LEVEL: True
+  LAMBDA_ADV_MAIN: 0.001
+  LAMBDA_ADV_AUX: 0.0002
+  INIT_ITER: 0
+  SAVE_PRED_EVERY: 2000
+  CLASSES_INCLUDE: 19
+  WEIGHTS: False
+  PREV_STOP: 0
+  BATCH_SIZE_SOURCE: 2
+  BATCH_SIZE_TARGET: 2
+  PSEUDOLABELS: True
+TEST:
+  MODE: best  
+  SNAPSHOT_STEP: 2000
+  SNAPSHOT_MAXITER: 120000
+  RESTORE_FROM: 
+  - /mnt/rhome/rac/ADVENT/experiments/snapshots/minMMD/model_pole.pth
+  

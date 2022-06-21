@@ -1,0 +1,24 @@
+SOURCE: GTA
+TARGET: Cityscapes
+EXP_NAME: IW_MAX_SQUARE_LOSS_baseline
+NUM_WORKERS: 7
+ANTI_CL: True
+TRAIN:
+  DA_METHOD: maxsquare
+  MODEL: DeepLabv2
+  RESTORE_FROM: ./../../experiments/snapshots/Source_longer/model_1.pth
+  MULTI_LEVEL: True
+  LAMBDA_ADV_MAIN: 0.09
+  LAMBDA_ADV_AUX: 0.009
+  BATCH_SIZE_SOURCE: 2
+  BATCH_SIZE_TARGET: 2
+  LEARNING_RATE: 0.0005
+  INIT_ITER: 0
+
+TEST:
+  MODE: best
+  SNAPSHOT_STEP: 2000
+  SNAPSHOT_MAXITER: 120000
+  RESTORE_FROM: 
+    - /mnt/rhome/rac/ADVENT/experiments/snapshots/IW_MAX_SQUARE_LOSS/model_34000.pth
+  FLIP: TRUE

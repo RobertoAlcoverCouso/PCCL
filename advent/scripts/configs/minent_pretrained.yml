@@ -1,0 +1,9 @@
+SOURCE: GTA
+TARGET: Cityscapes
+EXP_NAME: GTA2Cityscapes_MinEnt
+NUM_WORKERS: 4
+TEST:
+  MODE: single
+  RESTORE_FROM:
+    - ./../pretrained_models/GTA5_to_Cityscapes_MaxSquare_IW_Multi.pth
+    # - ../../pretrained_models/gta2cityscapes_minent.pth

@@ -1,0 +1,21 @@
+SOURCE: GTA
+TARGET: Cityscapes
+EXP_NAME: GTA2Cityscapes_FADA_MAXSQ
+NUM_WORKERS: 4
+TEST:
+  MODE: pseudolabels
+  MODEL:
+    - DeepLabv2
+    - DeepLabv2
+  MULTI_LEVEL:
+    - True
+    - True
+  RESTORE_FROM:
+    - ./../pretrained_models/Best_IW_MAXSQUARE.pth
+    - ./../pretrained_models/Best_FADA_aux.pth
+  MODEL_WEIGHT:
+    - 0.5
+    - 0.5
+  FLIP: True
+  LAMBDA_MAIN: 0.9
+  LAMBDA_AUX: 0.1

@@ -1,0 +1,27 @@
+TEST:
+  MODE: pseudolabels 
+  SNAPSHOT_STEP: 2000
+  SNAPSHOT_MAXITER: 120000
+  MODEL:
+    - DeepLabv2
+    - DeepLabv2
+    - DeepLabv2
+    - DeepLabv2
+  MULTI_LEVEL:
+    - True
+    - True
+    - True
+    - True
+  FLIP: True
+  RESTORE_FROM:
+    - /mnt/rhome/rac/ADVENT/experiments/snapshots/minMMD/model_pole_55.pth
+    - /mnt/rhome/rac/ADVENT/experiments/snapshots/minMMD/model_truck_55.pth
+    - /mnt/rhome/rac/ADVENT/experiments/snapshots/minMMD/model_bus_55.pth
+    - /mnt/rhome/rac/ADVENT/experiments/snapshots/minMMD/model_iter3_55mIoU.pth
+  MODEL_WEIGHT:
+    - 0.25
+    - 0.25
+    - 0.25
+    - 0.25
+  LAMBDA_MAIN: 0.95
+  LAMBDA_AUX: 0.05

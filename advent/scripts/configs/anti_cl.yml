@@ -1,0 +1,23 @@
+SOURCE: GTA
+TARGET: Cityscapes
+EXP_NAME: Anticurriculum_include_every_epoch
+NUM_WORKERS: 4
+ANTI_CL: True
+TRAIN:
+  DA_METHOD: CL
+  MODEL: DeepLabv2
+  RESTORE_FROM: ./../../experiments/snapshots/Anticurriculum_include_every_epoch/model_275000.pth
+  MULTI_LEVEL: True
+  LAMBDA_ADV_MAIN: 0.001
+  LAMBDA_ADV_AUX: 0.0002
+  EARLY_STOP: 1500000
+  MAX_ITERS: 3000000
+  SAVE_PRED_EVERY: 25000
+  CLASSES_INCLUDE: 16
+  LEARNING_RATE: 2.25e-4
+TEST:
+  MODE: single
+  SNAPSHOT_STEP: 25000
+  SNAPSHOT_MAXITER: 1500000
+  RESTORE_FROM: 
+    - ./../pretrained_models/gta2cityscapes_advent_cyclegan.pth
