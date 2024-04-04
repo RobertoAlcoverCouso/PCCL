@@ -1,4 +1,4 @@
-#Code for PCCL [[Paper]([https://arxiv.org/abs/2303.11797](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4410425)].
+#Code for PCCL [[Paper](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4410425)].
 Based on the [[ADVENT](https://github.com/valeoai/ADVENT)] paper and code.
 
 ## Preparation
