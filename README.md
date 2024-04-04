@@ -55,8 +55,20 @@ $ cd <root_dir>/advent/scripts
 $ python train.py --cfg ./configs/method.yml
 $ python train.py --cfg ./configs/method.yml --tensorboard         % using tensorboard
 ```
+If multiple GPUs are available, you can denote it by:
+```bash
+$ python train.py --cfg ./configs/method.yml -n N -g G -r R
+```
+where N is the number of nodes, G the number of gpus per node and r the rank of each process.
+make sure to tune the variables: os.environ['MASTER_ADDR'], os.environ['MASTER_PORT'] to your machine.
+
 ### Testing
 To test a given method ``method":
 ```bash
 $ cd <root_dir>/advent/scripts
 $ python test.py --cfg ./configs/method.yml
+
+## Important files
+advent/domain_adaptation/train_UDA.py contains the implementation of each method.
+advent/model/* contains the implementation of DeplabV2 and the discriminator.
+advent/scripts/train.py contains the higher level code for defining the datasets, loaders and training method.
