@@ -26,7 +26,7 @@ $ conda install -c menpo opencv
 $ pip install -e <root_dir>
 ```
 
-With this, you can edit the ADVENT code on the fly and import function 
+With this, you can edit the code on the fly and import function 
 and classes of ADVENT in other project as well.
 
 3. Optional. To uninstall this package, run:
