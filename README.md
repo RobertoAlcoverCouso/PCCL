@@ -35,7 +35,7 @@ $ pip uninstall ADVENT
 ```
 
 ### Training
-For the experiments done in the paper, we used pytorch 0.4.1 and CUDA 9.0. To ensure reproduction, the random seed has been fixed in the code. Still, you may need to train a few times to reach the comparable performance.
+For the experiments done in the paper, we used pytorch 0.4.1 and CUDA 9.0. To ensure reproduction, the random seed has been fixed in the code. However, you can select a random seed indicating with the flag --random-train
 
 By default, logs and snapshots are stored in ```<root_dir>/experiments``` with this structure:
 ```bash
