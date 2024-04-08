@@ -70,5 +70,7 @@ $ python test.py --cfg ./configs/method.yml
 ```
 ## Important files
 advent/domain_adaptation/train_UDA.py contains the implementation of each method.
+
 advent/model/* contains the implementation of DeplabV2 and the discriminator.
+
 advent/scripts/train.py contains the higher level code for defining the datasets, loaders and training method.
