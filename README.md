@@ -8,6 +8,26 @@ Based on the [[ADVENT](https://github.com/valeoai/ADVENT)] paper and code.
 * Pytorch >= 0.4.1
 * CUDA 9.0 or higher
 
+#### Data downlading
+By default, the datasets are put in ```<root_dir>/../data```. We use symlinks to hook the ADVENT codebase to the datasets. An alternative option is to explicitlly specify the parameters ```DATA_DIRECTORY_SOURCE``` and ```DATA_DIRECTORY_TARGET``` in YML configuration files.
+
+* **GTA5**: Please follow the instructions [here](https://download.visinf.tu-darmstadt.de/data/from_games/) to download images and semantic segmentation annotations. The GTA5 dataset directory should have this basic structure:
+```bash
+<root_dir>/data/GTAV/                               % GTA dataset root
+<root_dir>/data/GTAV/images/                        % GTA images
+<root_dir>/data/GTAV/labels/                        % Semantic segmentation labels
+...
+```
+
+* **Cityscapes**: Please follow the instructions in [Cityscape](https://www.cityscapes-dataset.com/) to download the images and validation ground-truths. The Cityscapes dataset directory should have this basic structure:
+```bash
+<root_dir>/data/Cityscapes/                         % Cityscapes dataset root
+<root_dir>/data/Cityscapes/leftImg8bit              % Cityscapes images
+<root_dir>/data/Cityscapes/leftImg8bit/val
+<root_dir>/data/Cityscapes/gtFine                   % Semantic segmentation labels
+<root_dir>/data/Cityscapes/gtFine/val
+...
+```
 ### Installation
 0. Clone the repo:
 ```bash
