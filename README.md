@@ -53,7 +53,12 @@ and classes of ADVENT in other project as well.
 ```bash
 $ pip uninstall ADVENT
 ```
-
+### Check Installation
+You'll need at least image "frankfurt/frankfurt_000001_007973_leftImg8bit.png" in folder <root_dir>/data/Cityscapes/leftImg8bit and a download test_model.pth  in  <root_dir>/advent
+```bash
+$ cd <root_dir>/advent/scripts
+$ python test.py --cfg configs/check.yml
+```
 ### Training
 For the experiments done in the paper, we used pytorch 0.4.1 and CUDA 9.0. To ensure reproduction, the random seed has been fixed in the code. However, you can select a random seed indicating with the flag --random-train
 
