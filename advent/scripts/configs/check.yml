@@ -1,0 +1,10 @@
+SOURCE: GTA
+TARGET: Cityscapes
+EXP_NAME: Checking
+NUM_WORKERS: 6
+ANTI_CL: False
+DATA_LIST_TARGET: '../dataset/cityscapes_list/check.txt'
+TEST:
+  MODE: visualize
+  RESTORE_FROM: 
+    - /mnt/rhome/rac/ADVENT/experiments/snapshots/ADVENT_baseline/model_96000.pth 
