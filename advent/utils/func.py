@@ -2,7 +2,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 
-from advent.utils.loss import cross_entropy_2d, KL_joint
+from advent.utils.loss import cross_entropy_2d
 
 
 def bce_loss(y_pred, y_label):
@@ -21,9 +21,7 @@ def loss_calc(pred, label, device, included=None, weights=None):
     label = label.long().to(device)
     return cross_entropy_2d(pred, label, included, weights)
 
-def loss_const(pred, hist, label, device, weights=None):
-    label = label.long().to(device)
-    return KL_joint(pred, hist, label, weights)
+
 
 def lr_poly(base_lr, iter, max_iter, power, cl=False, include=0, reset=0):
     """ Poly_LR scheduler
