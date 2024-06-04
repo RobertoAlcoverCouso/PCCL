@@ -9,7 +9,7 @@ Based on the [[ADVENT](https://github.com/valeoai/ADVENT)] paper and code.
 * CUDA 9.0 or higher
 
 #### Data downlading
-By default, the datasets are put in ```<root_dir>/../data```. We use symlinks to hook the ADVENT codebase to the datasets. An alternative option is to explicitlly specify the parameters ```DATA_DIRECTORY_SOURCE``` and ```DATA_DIRECTORY_TARGET``` in YML configuration files.
+By default, the datasets are put in ```<root_dir>/../data```. We use symlinks to hook the ADVENT codebase to the datasets. An alternative option is to explicitlly specify the parameters ```DATA_DIRECTORY_SOURCE``` and ```DATA_DIRECTORY_TARGET``` in YML configuration files or if you want to fix them for all experiments modigy ```advent/domain_adaptation/config.py```.
 
 * **GTA5**: Please follow the instructions [here](https://download.visinf.tu-darmstadt.de/data/from_games/) to download images and semantic segmentation annotations. The GTA5 dataset directory should have this basic structure:
 ```bash
@@ -93,6 +93,15 @@ To test a given method ``method":
 $ cd <root_dir>/advent/scripts
 $ python test.py --cfg ./configs/method.yml
 ```
+
+#### Pretrained Models
+We provide the links of our trained models:
+1.  [AdaptSegNet](http://www-vpu.eps.uam.es/publications/PCCL/AdaptSegNet.pth)
+2.  [ADVENT](http://www-vpu.eps.uam.es/publications/PCCL/ADVENT.pth)
+3.  [MinEnt](http://www-vpu.eps.uam.es/publications/PCCL/MinEnt.pth)
+4.  [FADA](http://www-vpu.eps.uam.es/publications/PCCL/FADA.pth)
+5.  [MAXSquare](http://www-vpu.eps.uam.es/publications/PCCL/MAXSquare.pth)
+
 ## Important files
 advent/domain_adaptation/train_UDA.py contains the implementation of each method.
 
